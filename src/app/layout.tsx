@@ -35,14 +35,6 @@ export const metadata: Metadata = {
     url: "https://kodarte.com",
     siteName: "Kodarte",
     type: "website",
-    images: [
-      {
-        url: "https://kodarte.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Kodarte - Criação de Sites com Propósito e Alma",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
