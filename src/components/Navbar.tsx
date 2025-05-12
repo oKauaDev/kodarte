@@ -36,6 +36,7 @@ export default function Navbar() {
                 : ""
             }`}
             key={link.href}
+            aria-label={link.label}
           >
             {link.label}
           </Link>

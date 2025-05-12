@@ -15,18 +15,21 @@ export default function HomePage() {
         alt=""
         width={500}
         height={300}
-        className="hidden max-lg:block fixed bottom-0 h-[20vh] object-cover object-top opacity-50"
+        className="hidden max-lg:block fixed left-2/4 -translate-x-2/4 bottom-0 h-[20vh] object-cover object-top opacity-50"
       />
       <main className="flex">
         <Credits margin={false} />
         <div className="w-screeen h-screen flex items-center overflow-hidden max-mdl:h-auto max-mdl:mt-10">
-          <Image
-            src="/images/world.png"
-            alt=""
-            width={2000}
-            height={2000}
-            className="w-[40.31vw] select-none h-[120vh] object-cover object-right max-lg:w-[30.31vw] max-lg:hidden"
-          />
+          <div className="w-[40.31vw] relative h-[120vh] max-lg:w-[30.31vw] max-lg:hidden">
+            <Image
+              src="/images/world.png"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 30.31vw, 40.31vw"
+              priority
+              className="w-full h-full select-none object-cover object-right"
+            />
+          </div>
           <div className="px-[2.81vw] max-mdl:px-[6vw] py-10 flex items-center gap-28">
             <Image
               src="/icons/pt-intro-web.svg"
