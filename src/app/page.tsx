@@ -20,7 +20,7 @@ export default function HomePage() {
       <main className="flex">
         <Credits margin={false} />
         <div className="w-screeen h-screen flex items-center overflow-hidden max-mdl:h-auto max-mdl:mt-10">
-          <div className="w-[40.31vw] relative h-[120vh] max-lg:w-[30.31vw] max-lg:hidden">
+          <div className="w-[80.62vw] relative h-[120vh] max-lg:w-[30.31vw] max-lg:hidden">
             <Image
               src="/images/world.png"
               alt=""
