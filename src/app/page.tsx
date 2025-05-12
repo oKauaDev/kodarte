@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import Credits from "@/components/Credits";
 import ExplainText from "@/components/ExplainText";
+import ImageMediaQuery from "@/components/ImageMediaQuery";
 import Navbar from "@/components/Navbar";
 import Svg from "@/components/Svg";
 import Image from "next/image";
@@ -15,13 +16,16 @@ export default function HomePage() {
         alt=""
         width={500}
         height={300}
+        loading="lazy"
+        quality={60}
         className="hidden max-lg:block fixed left-2/4 -translate-x-2/4 bottom-0 h-[20vh] object-cover object-top opacity-50"
       />
       <main className="flex">
         <Credits margin={false} />
         <div className="w-screeen h-screen flex items-center overflow-hidden max-mdl:h-auto max-mdl:mt-10">
           <div className="w-[80.62vw] relative h-[120vh] max-lg:w-[30.31vw] max-lg:hidden">
-            <Image
+            <ImageMediaQuery
+              mediaQuery={1024}
               src="/images/world.png"
               alt=""
               fill

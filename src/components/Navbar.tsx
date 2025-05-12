@@ -44,7 +44,7 @@ export default function Navbar() {
       </nav>
 
       <nav className="px-[6vw] pt-10 items-center justify-between hidden max-mdl:flex">
-        <Link href="/">
+        <Link href="/" aria-label="Kodarte Logo">
           <Svg src="/icons/mobileicon.svg" />
         </Link>
         <div className="flex items-center gap-8">
