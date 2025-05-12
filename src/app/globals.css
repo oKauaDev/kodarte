@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary-100: #d5bdff;
+  --color-primary-200: #9964f6;
+  --color-primary-300: #5004d4;
+  --color-primary-400: #27006b;
+  --color-primary-500: #10002c;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-support-100: #fafbfc;
+  --color-support-200: #f0f1f2;
+  --color-support-300: #d9dbde;
+  --color-support-400: #c5c8ca;
+  --color-support-500: #8b8f93;
+  --color-support-600: #555a5e;
+  --color-support-700: #262b30;
+  --color-support-800: #1f252b;
+  --color-support-900: #0f141a;
+  --color-support-1000: #010810;
+
+  --font-roboto: "Roboto", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+
+  --breakpoint-xs: 30rem; /* 480px */
+  --breakpoint-sm: 40rem; /* 640px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-mdl: 57.5rem; /* 920px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-lg2: 68.75rem; /* 1100px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 86.25rem; /* 1380px */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.text-gradient-border {
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: 10%;
+  z-index: 1;
+}
+
+.text-gradient-border::before {
+  content: attr(data-text);
+  font-family: "Space Grotesk", sans-serif;
+  position: absolute;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: 10%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-stroke: 1px transparent;
+  text-stroke: 1px transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(221, 201, 235, 1) 0%,
+    rgba(255, 255, 255, 0.5) 22%,
+    rgba(239, 229, 246, 1) 44%,
+    rgba(221, 201, 235, 0.5) 69%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animate-nav-to-default {
+  transform: translate3d(0, 300px, 0);
+  opacity: 0;
+  animation-name: anime-nav-to-default;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime-nav-to-default {
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.to-left {
+  transform: translate3d(-150px, 0, 0);
+  opacity: 0;
+  animation-name: to-default;
+  animation-duration: 0.45s;
+  animation-fill-mode: forwards;
+}
+
+.to-right {
+  transform: translate3d(150px, 0, 0);
+  opacity: 0;
+  animation-name: to-default;
+  animation-duration: 0.45s;
+  animation-fill-mode: forwards;
+}
+
+.to-top {
+  transform: translate3d(0px, -150px, 0);
+  opacity: 0;
+  animation-name: to-default;
+  animation-duration: 0.45s;
+  animation-fill-mode: forwards;
+}
+
+.to-bottom {
+  transform: translate3d(0px, 150px, 0);
+  opacity: 0;
+  animation-name: to-default;
+  animation-duration: 0.45s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes to-default {
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-support-1000);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(149, 19, 230, 1) 0%, rgba(4, 139, 212, 1) 100%);
+}
+
+::selection {
+  background-color: #5004d4b0;
+  color: #fff;
 }

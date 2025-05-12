@@ -1,103 +1,78 @@
+import Container from "@/components/Container";
+import Credits from "@/components/Credits";
+import ExplainText from "@/components/ExplainText";
+import Navbar from "@/components/Navbar";
+import Svg from "@/components/Svg";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <Container className="!p-0 overflow-hidden">
+      <Navbar />
+      <Image
+        src="/images/world.png"
+        alt=""
+        width={500}
+        height={300}
+        className="hidden max-lg:block fixed bottom-0 h-[20vh] object-cover object-top opacity-50"
+      />
+      <main className="flex">
+        <Credits margin={false} />
+        <div className="w-screeen h-screen flex items-center overflow-hidden max-mdl:h-auto max-mdl:mt-10">
+          <Image
+            src="/images/world.png"
+            alt=""
+            width={2000}
+            height={2000}
+            className="w-[40.31vw] select-none h-[120vh] object-cover object-right max-lg:w-[30.31vw] max-lg:hidden"
+          />
+          <div className="px-[2.81vw] max-mdl:px-[6vw] py-10 flex items-center gap-28">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/icons/pt-intro-web.svg"
+              alt=""
+              width={44}
+              height={400}
+              className="max-lg:hidden"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <span className="hidden max-lg:block max-mdl:!hidden"></span>
+            <div>
+              <h2 className="text-lg font-space-grotesk font-bold leading-7 tracking-[0.32rem] text-primary-200 max-lg:text-center">
+                QUALIDADE NA VANGUARDA
+              </h2>
+              <h1 className="mt-3 font-bold tracking-widest font-space-grotesk text-[2rem] max-xl:text-2xl text-support-100 uppercase max-lg:text-center">
+                Codificamos com{" "}
+                <ExplainText
+                  text="lirismo"
+                  explain={
+                    <>
+                      <span className="font-bold">Lirismo</span> é quando a emoção vira palavras,
+                      como se o coração escrevesse direto, com beleza, sentimento e um toque de alma
+                      poética.
+                    </>
+                  }
+                />
+                , entregamos com exatidão.
+              </h1>
+              <p className="mt-3 text-xl max-xl:text-lg leading-7 tracking-[0.1rem] font-normal text-support-400 max-lg:text-center">
+                Somos uma agência de desenvolvimento web, unindo tecnologia, design e estratégia
+                para criar soluções inovadoras e entregar resultados excepcionais.
+              </p>
+              <p className="mt-8 font-light italic text-support-500 leading-7 mb-11 max-lg:text-center">
+                {"“"}Acreditamos que boas soluções nascem da simplicidade bem aplicada.{"”"}
+              </p>
+
+              <Link
+                href="https://wa.me/5532998566823"
+                className="flex items-center gap-3 text-support-100 uppercase font-space-grotesk text-xl leading-5 font-bold py-2 px-5 bg-primary-300 rounded-lg w-max relative overflow-hidden before:content-[''] before:absolute before:left-0 before:top-0 before:w-1/2 before:h-full before:bg-gradient-to-r before:from-white/10 before:via-white/40 before:to-white/10 before:-translate-x-full before:skew-x-[-30deg] before:transition-all before:duration-500 hover:before:translate-x-[250%] max-lg:mx-auto"
+              >
+                quero contratar
+                <Svg src="/icons/sparkles.svg" className="relative z-10" />
+              </Link>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </Container>
   );
 }
