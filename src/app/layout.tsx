@@ -36,7 +36,9 @@ export const metadata: Metadata = {
     url: "https://kodarte.com",
     siteName: "Kodarte",
     type: "website",
-    images: ["https://kodarte.com/og.jpg"],
+    images: ["https://kodarte.com/images/og.jpg"],
+    locale: "pt_BR",
+    countryName: "Brazil",
   },
   twitter: {
     card: "summary_large_image",
@@ -44,7 +46,9 @@ export const metadata: Metadata = {
     description:
       "Agência Kodarte: sites que encantam, performam e convertem. Design estratégico, código impecável e alma.",
     creator: "@Kodarte",
-    images: ["https://kodarte.com/og.jpg"],
+    images: ["https://kodarte.com/images/og.jpg"],
+    site: "https://kodarte.com",
+    siteId: "Kodarte",
   },
 };
 
