@@ -7,13 +7,15 @@ import Svg from "@/components/Svg";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export default function HomePage() {
   return (
     <Container className="!p-0 overflow-hidden">
       <Navbar />
       <Image
         src="/images/world.png"
-        alt=""
+        alt="Imagem principal do mundo da Kodarte"
         width={500}
         height={300}
         loading="lazy"
@@ -27,8 +29,9 @@ export default function HomePage() {
             <ImageMediaQuery
               mediaQuery={1024}
               src="/images/world.png"
-              alt=""
+              alt="Imagem principal do mundo da Kodarte"
               fill
+              quality={100}
               sizes="(max-width: 1024px) 30.31vw, 40.31vw"
               priority
               className="w-full h-full select-none object-cover object-right"
@@ -37,7 +40,7 @@ export default function HomePage() {
           <div className="px-[2.81vw] max-mdl:px-[6vw] py-10 flex items-center gap-28">
             <Image
               src="/icons/pt-intro-web.svg"
-              alt=""
+              alt="Montamos o seu site"
               width={44}
               height={400}
               className="max-lg:hidden"

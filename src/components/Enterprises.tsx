@@ -47,7 +47,7 @@ export default function Enterprises() {
             src={enterprise.icon}
             width={90}
             height={90}
-            alt={enterprise.name}
+            alt={`Serviço para o site da ${enterprise.name}`}
             className="mx-auto"
           />
           <h3 className="mt-7 mb-4 text-[2rem] leading-12 font-bold uppercase font-space-grotesk text-support-100 tracking-widest text-center">
