@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Vercel from "@/components/Vercel";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -52,6 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <Vercel />
       <body className={`${roboto.variable} ${spaceGrotesk.variable} antialiased`}>{children}</body>
     </html>
   );

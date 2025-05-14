@@ -85,13 +85,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button
-              className={`font-space-grotesk text-xl leading-7 font-bold absolute bottom-24 w-[calc(100%-80px)] tracking-widest bg-primary-300 text-support-100 px-10 py-4 rounded-lg`}
-              onClick={() => setMobileNavOpen(false)}
-            >
-              FECHAR
-            </button>
-
             <div className="flex gap-10 items-center justify-center w-full">
               <Link
                 href="https://wa.me/5532998566823"
@@ -100,12 +93,25 @@ export default function Navbar() {
                 <Svg src="/icons/whatsapp.svg" />
               </Link>
               <Link
+                href="mailto:kodarte.dev@gmail.com"
+                className="text-support-100 bg-primary-300 p-3 rounded-lg"
+              >
+                <Svg src="/icons/email.svg" />
+              </Link>
+              <Link
                 href="https://discordapp.com/users/668849866805477398"
                 className="text-support-100 bg-primary-300 p-3 rounded-lg"
               >
                 <Svg src="/icons/discord.svg" />
               </Link>
             </div>
+
+            <button
+              className={`font-space-grotesk text-xl leading-7 font-bold absolute bottom-[10vh] w-[calc(100%-80px)] tracking-widest bg-primary-300 text-support-100 px-10 py-4 rounded-lg`}
+              onClick={() => setMobileNavOpen(false)}
+            >
+              FECHAR
+            </button>
           </div>
         </div>
       </nav>

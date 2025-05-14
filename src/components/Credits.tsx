@@ -29,6 +29,13 @@ export default function Credits({ margin = true }: Props) {
                 <Svg src="/icons/whatsapp.svg" />
               </Link>
               <Link
+                href="mailto:kodarte.dev@gmail.com"
+                aria-label="email"
+                className="text-support-300"
+              >
+                <Svg src="/icons/email.svg" />
+              </Link>
+              <Link
                 href="https://discordapp.com/users/668849866805477398"
                 className="text-support-300"
                 aria-label="discord"
